@@ -1,0 +1,27 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "fix/1245-job-history-response-shape",
+    "fix/1245-profile-job-history-paginated-response",
+    "fix/ci-all-three-failures",
+    "main",
+    "origin",
+    "pr-682"
+  ],
+  "parent": {
+    "fix/1245-job-history-response-shape": "main",
+    "fix/1245-profile-job-history-paginated-response": "main",
+    "fix/ci-all-three-failures": "main",
+    "main": null,
+    "origin": "main",
+    "pr-682": "main"
+  },
+  "order": [
+    "main",
+    "fix/1245-job-history-response-shape",
+    "fix/1245-profile-job-history-paginated-response",
+    "fix/ci-all-three-failures",
+    "origin",
+    "pr-682"
+  ]
+}
