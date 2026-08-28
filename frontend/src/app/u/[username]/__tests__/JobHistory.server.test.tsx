@@ -3,11 +3,11 @@ import JobHistory from "../JobHistory.server";
 
 describe("JobHistory", () => {
   afterEach(() => {
-    jest.restoreAllMocks();
+    jest.resetAllMocks();
   });
 
   it("renders jobs from the paginated API response", async () => {
-    jest.spyOn(global, "fetch").mockResolvedValue({
+    global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: async () => ({
         data: [{ id: "job-1", title: "Build a Stellar integration" }],
@@ -28,7 +28,7 @@ describe("JobHistory", () => {
   });
 
   it("renders the empty state when the request fails", async () => {
-    jest.spyOn(global, "fetch").mockResolvedValue({ ok: false } as Response);
+    global.fetch = jest.fn().mockResolvedValue({ ok: false } as Response);
 
     render(
       await JobHistory({
